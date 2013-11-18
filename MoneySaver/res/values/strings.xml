@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Money Saver</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="txt_titulo">Money Saver</string>
+    <string name="txt_bt_input">Ingresos</string>
+    <string name="txt_bt_output">Gastos</string>
+    <string name="txt_bt_calendar">Calendario</string>
+    <string name="txt_bt_config">Configuracion</string>
+    <string name="txt_input">Ingresos</string>
+    <string name="txt_output">Gastos</string>
+    <string name="txt_calendar">Canlendario</string>
+    <string name="txt_config">Configuración</string>
+
+</resources>
