@@ -37,8 +37,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/input"
-                
+                android:background="@drawable/empty"
+                android:src="@drawable/bt_input_selector"
                 android:contentDescription="@string/txt_bt_input"
                 />
     
@@ -47,8 +47,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/output"
-                android:background="@null"
+                android:src="@drawable/bt_output_selector"
+                android:background="@drawable/empty"
                 android:contentDescription="@string/txt_bt_output" />
     
     </TableRow>
@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/bt_calendar_selector"
-                android:background="@null"
+                android:background="@drawable/empty"
                 android:contentDescription="@string/txt_bt_calendar"
                  />
     
@@ -91,8 +91,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/config"
-                android:background="@null"
+                android:src="@drawable/bt_config_selector"
+                android:background="@drawable/empty"
                 android:contentDescription="@string/txt_bt_config" />
     
     </TableRow>
