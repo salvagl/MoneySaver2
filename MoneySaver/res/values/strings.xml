@@ -13,5 +13,6 @@
     <string name="txt_output">Gastos</string>
     <string name="txt_calendar">Canlendario</string>
     <string name="txt_config">Configuración</string>
+    <string name="txt_listEmpty">No hay elementos en la lista</string>
 
 </resources>
