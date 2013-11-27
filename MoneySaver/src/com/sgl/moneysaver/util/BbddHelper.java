@@ -2,12 +2,14 @@ package com.sgl.moneysaver.util;
 
 import java.sql.Date;
 
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.text.format.Time;
 
 public class BbddHelper extends SQLiteOpenHelper {
 	public static final int DATABASE_VERSION = 1;
@@ -96,22 +98,24 @@ public class BbddHelper extends SQLiteOpenHelper {
 	}
 	
 	public void insertDefaultData(){
+		Time now = new Time();
+		now.setToNow();
 		
-		insertTipo("INGRESO", "INGRESO", null);
-		insertTipo("GASTO", "GASTO", null);
+		insertTipo("INGRESO", "INGRESO", now);
+		insertTipo("GASTO", "GASTO", now);
 		
-		insertCategoria("HOGAR", "HOGAR", null);
-		insertCategoria("TRABAJO", "TRABAJO", null);
-		insertCategoria("FINANZAS", "FINANZAS", null);
-		insertCategoria("OCIO", "OCIO", null);
-		insertCategoria("TRANSPORTE", "TRANSPORTE", null);
+		insertCategoria("HOGAR", "HOGAR", now);
+		insertCategoria("TRABAJO", "TRABAJO", now);
+		insertCategoria("FINANZAS", "FINANZAS", now);
+		insertCategoria("OCIO", "OCIO", now);
+		insertCategoria("TRANSPORTE", "TRANSPORTE", now);
 				
-		insertConcepto("Hipoteca",590.00f, "1m", 1, 0, 4, null, "Hipoteca_en", null, true);
-		insertConcepto("Nomina",1000.00f, "1m", 0, 1, 5, null, "Nomina_en", null, true);
+		insertConcepto("Hipoteca",590.32f, "1m", 1, 0, 4, now, "Hipoteca_en", now, true);
+		insertConcepto("Nomina",1000.50f, "1m", 0, 1, 5, now, "Nomina_en", now, true);
 		
 		
 	}
-	public long insertConcepto(String nombre,float importe,String periodicidad,int idCategoria, int idTipo, int valoracion, Date fecha,String nombreEn,Date createdAt,Boolean activado){
+	public long insertConcepto(String nombre,float importe,String periodicidad,int idCategoria, int idTipo, int valoracion, Time fecha,String nombreEn,Time createdAt,Boolean activado){
 		
 		ContentValues initialValues = new ContentValues();
 		initialValues.put("nombre",nombre);
@@ -120,30 +124,30 @@ public class BbddHelper extends SQLiteOpenHelper {
 		initialValues.put("id_categoria",idCategoria);
 		initialValues.put("id_tipo",idTipo);
 		initialValues.put("valoracion",valoracion);
-		//initialValues.put("fecha",fecha.toString());
-		initialValues.put("fecha","2013/11/11 10:10:10");
+		initialValues.put("fecha",fecha.toString());
+		//initialValues.put("fecha","2013/11/11 10:10:10");
 		initialValues.put("nombre_en",nombreEn);
-		//initialValues.put("created_at",createdAt.toString());
-		initialValues.put("created_at","2013/11/11 10:10:10");
+		initialValues.put("created_at",createdAt.toString());
+		//initialValues.put("created_at","2013/11/11 10:10:10");
 		initialValues.put("activado",activado);
 		return mDb.insert("CONCEPTO", null, initialValues);
 	};
 	
-	public long insertTipo(String nombre,String nombreEn,Date createdAt){
+	public long insertTipo(String nombre,String nombreEn,Time createdAt){
 		ContentValues initialValues = new ContentValues();
 		initialValues.put("nombre",nombre);
 		initialValues.put("nombre_en",nombreEn);
-		//initialValues.put("created_at",createdAt.toString());
-		initialValues.put("created_at","2013/11/11 10:10:10");
+		initialValues.put("created_at",createdAt.toString());
+		//initialValues.put("created_at","2013/11/11 10:10:10");
 		return mDb.insert("TIPO", null, initialValues);
 	}
 	
-	public long insertCategoria(String nombre,String nombreEn,Date createdAt){
+	public long insertCategoria(String nombre,String nombreEn,Time createdAt){
 		ContentValues initialValues = new ContentValues();
 		initialValues.put("nombre",nombre);
 		initialValues.put("nombre_en",nombreEn);
-		//initialValues.put("created_at",createdAt.toString());
-		initialValues.put("created_at","2013/11/11 10:10:10");
+		initialValues.put("created_at",createdAt.toString());
+		//initialValues.put("created_at","2013/11/11 10:10:10");
 		return mDb.insert("CATEGORIA", null, initialValues);
 	}	
 	
