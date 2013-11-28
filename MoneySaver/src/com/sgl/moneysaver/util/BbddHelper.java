@@ -14,6 +14,8 @@ import android.text.format.Time;
 public class BbddHelper extends SQLiteOpenHelper {
 	public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "MoneySaver.db";
+    public static final int INPUT=1;
+    public static final int OUTPUT=2;
     private Context mCtx = null;
     private SQLiteDatabase mDb=null;
     
@@ -110,8 +112,20 @@ public class BbddHelper extends SQLiteOpenHelper {
 		insertCategoria("OCIO", "OCIO", now);
 		insertCategoria("TRANSPORTE", "TRANSPORTE", now);
 				
-		insertConcepto("Hipoteca",590.32f, "1m", 1, 0, 4, now, "Hipoteca_en", now, true);
-		insertConcepto("Nomina",1000.50f, "1m", 0, 1, 5, now, "Nomina_en", now, true);
+		insertConcepto("Hipoteca",590.32f, "1m", 1, OUTPUT, 5, now, "Hipoteca_en", now, true);
+		insertConcepto("Recibo Luz",180.50f, "1m", 1, OUTPUT, 4, now, "luz_en", now, true);
+		insertConcepto("Recibo Agua",30.00f, "1m", 1, OUTPUT, 4, now, "agua_en", now, true);
+		insertConcepto("Recibo Internet",30.75f, "1m", 1, OUTPUT, 4, now, "Internet_en", now, true);
+		
+		insertConcepto("Hipoteca2",590.32f, "1m", 2, OUTPUT, 5, now, "Hipoteca_en", now, true);
+		insertConcepto("Recibo Luz3",180.50f, "1m", 3, OUTPUT, 4, now, "luz_en", now, true);
+		insertConcepto("Recibo Agua3",30.00f, "1m", 3, OUTPUT, 4, now, "agua_en", now, true);
+		insertConcepto("Recibo Internet3",30.75f, "1m", 3, OUTPUT, 4, now, "Internet_en", now, true);
+		
+		insertConcepto("Recibo Internet4",30.75f, "1m", 4, OUTPUT, 4, now, "Internet_en", now, true);
+		
+		
+		insertConcepto("Nomina",1000.50f, "1m", 1, INPUT, 5, now, "Nomina_en", now, true);
 		
 		
 	}
@@ -125,10 +139,8 @@ public class BbddHelper extends SQLiteOpenHelper {
 		initialValues.put("id_tipo",idTipo);
 		initialValues.put("valoracion",valoracion);
 		initialValues.put("fecha",fecha.toString());
-		//initialValues.put("fecha","2013/11/11 10:10:10");
 		initialValues.put("nombre_en",nombreEn);
 		initialValues.put("created_at",createdAt.toString());
-		//initialValues.put("created_at","2013/11/11 10:10:10");
 		initialValues.put("activado",activado);
 		return mDb.insert("CONCEPTO", null, initialValues);
 	};
@@ -152,11 +164,16 @@ public class BbddHelper extends SQLiteOpenHelper {
 	}	
 	
 	public Cursor getAllInputs(){
-		return mDb.query("CONCEPTO", new String[] {"_id","nombre","importe","periodicidad","id_categoria","id_tipo","valoracion","fecha","nombre_en","created_at","activado"},"id_tipo=0" , null, null, null, null);
+		return mDb.query("CONCEPTO", new String[] {"_id","nombre","importe","periodicidad","id_categoria","id_tipo","valoracion","fecha","nombre_en","created_at","activado"},"id_tipo="+INPUT , null, null, null, "id_categoria");
 	}	
 	
 	public Cursor getAllOutputs(){
-		return mDb.query("CONCEPTO", new String[] {"_id","nombre","importe","periodicidad","id_categoria","id_tipo","valoracion","fecha","nombre_en","created_at","activado"},"id_tipo=1" , null, null, null, null);
+		return mDb.query("CONCEPTO", new String[] {"_id","nombre","importe","periodicidad","id_categoria","id_tipo","valoracion","fecha","nombre_en","created_at","activado"},"id_tipo="+OUTPUT , null, null, null, "id_categoria");
 	}
+	
+	public Cursor getCategoriaById(int id_categoria){
+		return mDb.query("CATEGORIA", new String[] {"_id","nombre","nombre_en","created_at"},"id_=?" , new String[]{""+id_categoria}, null, null, null);
+	}	
+	
 
 }

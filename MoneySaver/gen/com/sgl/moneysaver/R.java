@@ -47,16 +47,18 @@ public final class R {
         public static final int output_pressed=0x7f020012;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000e;
+        public static final int action_settings=0x7f090010;
         public static final int bt_addinput=0x7f090001;
         public static final int bt_calendar=0x7f090005;
         public static final int bt_config=0x7f090006;
         public static final int bt_input=0x7f090003;
         public static final int bt_output=0x7f090004;
         public static final int layout_principal=0x7f090002;
+        public static final int listActivado=0x7f09000b;
+        public static final int listFecha=0x7f09000e;
         public static final int listImporte=0x7f09000c;
-        public static final int listNombre=0x7f09000b;
-        public static final int listPeriodicidad=0x7f09000d;
+        public static final int listPeriodicidad=0x7f09000f;
+        public static final int listValoracion=0x7f09000d;
         public static final int list_complex_caption=0x7f090008;
         public static final int list_complex_title=0x7f090007;
         public static final int list_header_title=0x7f090009;
