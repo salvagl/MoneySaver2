@@ -219,9 +219,11 @@ private class ListConceptosAdapter extends SimpleAdapter{
 		RatingBar rbValoracion = (RatingBar)row.findViewById(R.id.listValoracion);
 		TextView tvFecha = (TextView)row.findViewById(R.id.listFecha);
 		
+		float numStar = Float.parseFloat(concepto.get(CONCEPTO_VALORACION));
+		
 		cbNombre.setText(concepto.get(CONCEPTO_NOMBRE));
 		tvImporte.setText(concepto.get(CONCEPTO_IMPORTE));
-		rbValoracion.setNumStars(Integer.parseInt(concepto.get(CONCEPTO_VALORACION)));
+		rbValoracion.setRating(numStar);
 		tvPeriodicidad.setText(concepto.get(CONCEPTO_PERIODICIDAD));
 		tvFecha.setText(concepto.get(CONCEPTO_FECHA));
 		

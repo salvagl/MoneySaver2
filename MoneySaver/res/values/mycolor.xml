@@ -3,4 +3,7 @@
     <color name="bg_green">#b4f6bb</color>
     <color name="bg_red">#f1a7a7</color>
     <color name="bg_blue">#aecbf3</color>
+    <color name="blue">#4082db</color>
+    <color name="green">#92d050</color>
+    <color name="red">#ef3232</color>
 </resources>

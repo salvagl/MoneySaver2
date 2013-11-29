@@ -14,6 +14,9 @@ public final class R {
         public static final int bg_blue=0x7f050002;
         public static final int bg_green=0x7f050000;
         public static final int bg_red=0x7f050001;
+        public static final int blue=0x7f050003;
+        public static final int green=0x7f050004;
+        public static final int red=0x7f050005;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -33,18 +36,21 @@ public final class R {
         public static final int bt_config_selector=0x7f020004;
         public static final int bt_input_selector=0x7f020005;
         public static final int bt_output_selector=0x7f020006;
-        public static final int calendar=0x7f020007;
-        public static final int calendar_pressed=0x7f020008;
-        public static final int cancel=0x7f020009;
-        public static final int config=0x7f02000a;
-        public static final int config_pressed=0x7f02000b;
-        public static final int empty=0x7f02000c;
-        public static final int ic_launcher=0x7f02000d;
-        public static final int input=0x7f02000e;
-        public static final int input_pressed=0x7f02000f;
-        public static final int ok=0x7f020010;
-        public static final int output=0x7f020011;
-        public static final int output_pressed=0x7f020012;
+        public static final int bt_ratingbar_selector=0x7f020007;
+        public static final int calendar=0x7f020008;
+        public static final int calendar_pressed=0x7f020009;
+        public static final int cancel=0x7f02000a;
+        public static final int config=0x7f02000b;
+        public static final int config_pressed=0x7f02000c;
+        public static final int empty=0x7f02000d;
+        public static final int ic_launcher=0x7f02000e;
+        public static final int input=0x7f02000f;
+        public static final int input_pressed=0x7f020010;
+        public static final int ok=0x7f020011;
+        public static final int output=0x7f020012;
+        public static final int output_pressed=0x7f020013;
+        public static final int star=0x7f020014;
+        public static final int star_des=0x7f020015;
     }
     public static final class id {
         public static final int action_settings=0x7f090010;
@@ -55,10 +61,10 @@ public final class R {
         public static final int bt_output=0x7f090004;
         public static final int layout_principal=0x7f090002;
         public static final int listActivado=0x7f09000b;
-        public static final int listFecha=0x7f09000e;
+        public static final int listFecha=0x7f09000d;
         public static final int listImporte=0x7f09000c;
-        public static final int listPeriodicidad=0x7f09000f;
-        public static final int listValoracion=0x7f09000d;
+        public static final int listPeriodicidad=0x7f09000e;
+        public static final int listValoracion=0x7f09000f;
         public static final int list_complex_caption=0x7f090008;
         public static final int list_complex_title=0x7f090007;
         public static final int list_header_title=0x7f090009;

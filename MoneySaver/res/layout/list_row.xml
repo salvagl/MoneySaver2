@@ -2,7 +2,8 @@
 
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/bg_green">
     <TableRow 
         android:layout_width="match_parent"
     	android:layout_height="wrap_content">
@@ -10,7 +11,7 @@
     	    android:id="@+id/listActivado"
     	    android:checked="false"
     	    android:textSize="20sp"
-    	    android:textColor="@color/bg_blue"
+    	    android:textColor="@color/green"
     	    
     	></CheckBox>
     	<TextView 
@@ -39,11 +40,17 @@
     	android:layout_height="wrap_content">
         
         <RatingBar
-            android:id="@+id/listValoracion" 
-            android:numStars="0"
-            android:maxWidth="100dp"
-            android:maxHeight="20dp"/>
-        
+            android:id="@+id/listValoracion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
+            android:maxHeight="17dp"
+            android:minHeight="17dp"
+            android:numStars="5"
+            android:progressDrawable="@drawable/bt_ratingbar_selector"
+            android:rating="0"
+            android:stepSize="1" />
         
     </TableRow>
     
